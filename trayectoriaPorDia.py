@@ -8,7 +8,7 @@ import glob
 #me armo un vector que tenga la union de todas las fechas y de ahí paso fecha por fecha recorriendo los csv y graficando 
 #elijo una fecha recorro todos los csv 
 #trayectoriasGPS is the path where i have each csv for each tortugue, it can be changed
-files=glob.glob("trayectoriasGPS\*.csv")
+files=glob.glob("trayectoriasGPS/*.csv")
 df=[]
 for a in files:
     df.append( pd.read_csv(a,sep=";"))
