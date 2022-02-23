@@ -4,6 +4,7 @@ import numpy as np
 from geopy import distance 
 import folium
 
+#it takes out points that went two far and are alone, it also takes out first points if they are far away from each other. To check this it compares velocities. 
 def fixing_time(x):
     x=str(x)
     if len(x)==4:
