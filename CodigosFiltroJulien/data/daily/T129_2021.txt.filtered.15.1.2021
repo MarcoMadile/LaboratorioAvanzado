@@ -1,0 +1,6 @@
+lat	lon	date	time	tempIMU	metodologia	sexo	tempmax(C)	tempmin(C)	tempmed(C)	Temprocíomediadiaria(C)	Humedadrelativadiaria(%)	vientodir	viento(km/h)vel	Presionsobreniveldelmar(Hp)	Prec(mm)	NubesTotOct	NubbajOct	Vis(km)
+-40.585465	-64.992704	15.1.2021	1050	26.02	GPS	hembra	29.4	20.7	25.0	13.3	48.8	SE	19.4	1016.8	*	3.7	1.5	30.0
+-40.585428	-64.992672	15.1.2021	1057	25.52	GPS	hembra	29.4	20.7	25.0	13.3	48.8	SE	19.4	1016.8	*	3.7	1.5	30.0
+-40.585494	-64.992727	15.1.2021	1100	25.72	GPS	hembra	29.4	20.7	25.0	13.3	48.8	SE	19.4	1016.8	*	3.7	1.5	30.0
+-40.585467	-64.992746	15.1.2021	1105	24.45	GPS	hembra	29.4	20.7	25.0	13.3	48.8	SE	19.4	1016.8	*	3.7	1.5	30.0
+-40.585449	-64.992747	15.1.2021	1110	24.28	GPS	hembra	29.4	20.7	25.0	13.3	48.8	SE	19.4	1016.8	*	3.7	1.5	30.0

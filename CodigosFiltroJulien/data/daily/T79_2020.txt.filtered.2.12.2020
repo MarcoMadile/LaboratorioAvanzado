@@ -1,0 +1,5 @@
+lat	lon	date	time	tempIMU	metodologia	sexo	tempmax(C)	tempmin(C)	tempmed(C)	Temprocíomediadiaria(C)	Humedadrelativadiaria(%)	vientodir	viento(km/h)vel	Presionsobreniveldelmar(Hp)	Prec(mm)	NubesTotOct	NubbajOct	Vis(km)
+-40.584070000000004	-64.99804	2.12.2020	1124	*	yagui	hembra	37.3	18.2	27.8	-15.8	6.1	WNW	28.8	1005.8	0	0.6	0.8	30
+-40.58408	-64.99803	2.12.2020	1155	*	yagui	hembra	37.3	18.2	27.8	-15.8	6.1	WNW	28.8	1005.8	0	0.6	0.8	30
+-40.58409	-64.99803	2.12.2020	1226	*	yagui	hembra	37.3	14.8	26.0	-15.6	7.3	W	29.2	1009.2	0	0.8	0.9	30.0 !Este punto decía CT29 en vez de CT79 en excel pero C79 en cuaderno
+-40.58421	-64.99866999999999	2.12.2020	1334	*	yagui	hembra	37.3	14.8	26.0	-14.9	9.1	W	29.7	1010.9	0	0.8	0.9	30

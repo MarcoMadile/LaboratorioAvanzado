@@ -1,0 +1,9 @@
+lat	lon	date	time	tempIMU	metodologia	sexo	tempmax(C)	tempmin(C)	tempmed(C)	Temprocíomediadiaria(C)	Humedadrelativadiaria(%)	vientodir	viento(km/h)vel	Presionsobreniveldelmar(Hp)	Prec(mm)	NubesTotOct	NubbajOct	Vis(km)
+-40.58345	-64.99811	29.11.2020	1555	*	yagui	macho	31.0	10.8	20.9	1.7	25.2	SSW	26.7	1012.7	0	2.8	2.1	30
+-40.58318	-64.99844	29.11.2020	1630	*	yagui	macho	31.0	10.8	20.9	1.5	25.7	SSW	26.7	1013.3	0	2.6	2.2	30
+-40.58289	-64.99866999999999	29.11.2020	1709	*	yagui	macho	31.0	10.8	20.9	1.4	26.4	SSW	26.7	1014.1	0	2.5	2.3	30
+-40.58264000000001	-64.99883	29.11.2020	1757	*	yagui	macho	31.0	10.8	20.9	1.4	26.4	SSW	26.7	1014.1	0	2.5	2.3	30
+-40.58249	-64.99826999999999	29.11.2020	1851	*	yagui	macho	31.0	10.8	20.9	1.1	26.9	SSW	26.7	1014.8	0	2.2	2.5	30
+-40.58207	-64.99766	29.11.2020	1946	*	yagui	macho	31.0	10.8	20.9	0.6	27.0	S	27.4	1015.7	0	2.1	2.7	30
+-40.58206	-64.9977	29.11.2020	1957	*	yagui	macho	31.0	10.8	20.9	0.6	27.0	S	27.4	1015.7	0	2.1	2.7	30
+-40.58203	-64.9977	29.11.2020	2024	*	yagui	macho	31.0	10.8	20.9	0.8	28.4	S	27.5	1016.6	0	1.9	3	30

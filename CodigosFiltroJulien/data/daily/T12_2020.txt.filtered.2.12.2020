@@ -1,0 +1,7 @@
+lat	lon	date	time	tempIMU	metodologia	sexo	tempmax(C)	tempmin(C)	tempmed(C)	Temprocíomediadiaria(C)	Humedadrelativadiaria(%)	vientodir	viento(km/h)vel	Presionsobreniveldelmar(Hp)	Prec(mm)	NubesTotOct	NubbajOct	Vis(km)
+-40.58437	-64.99693	2.12.2020	1235	*	yagui	hembra	37.3	14.8	26.0	-15.6	7.3	W	29.2	1009.2	0	0.8	0.9	30
+-40.58452	-64.99761	2.12.2020	1341	*	yagui	hembra	37.3	14.8	26.0	-14.9	9.1	W	29.7	1010.9	0	0.8	0.9	30
+-40.58463	-64.9976	2.12.2020	1505	*	yagui	hembra	37.3	14.8	26.0	-12.1	13.9	WSW	28.2	1012.1	0	0.8	1.1	30
+-40.58462	-64.99783000000001	2.12.2020	1630	*	yagui	hembra	37.3	14.8	26.0	-10.4	16.1	WSW	27.2	1012.3	0	0.8	1.1	30
+-40.584540000000004	-64.99773	2.12.2020	1755	*	yagui	hembra	37.3	14.8	26.0	-7.8	19.0	SW	26.2	1012.4	0	0.9	1.1	30
+-40.584740000000004	-64.99752	2.12.2020	2148	*	yagui	hembra	37.3	14.8	26.0	0.7	28.6	SSE	22.7	1011.6	0	1.0	1.1	30
