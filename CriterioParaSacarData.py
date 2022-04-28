@@ -4,7 +4,6 @@ import numpy as np
 from geopy import distance 
 import folium
 
-#it takes out points that went two far and are alone, it also takes out first points if they are far away from each other. To check this it compares velocities. 
 def fixing_time(x):
     x=str(x)
     if len(x)==4:
@@ -40,7 +39,7 @@ def fix_some_points(df,dates,v0):
                 dist=(np.array(dist)).astype("int")
                 time=pd.to_datetime(df[j].loc[df[j]['date']==day]["time"],format="%H%M")
                 time=np.array(time)
-                deltatimes=((time[1:]-time[:-1]).astype('timedelta64[s]')).astype("int") 
+                deltatimes=((time[1:]-time[:-1]).astype('timedelta64[m]')).astype("int")
                 vel=np.divide(dist,deltatimes)
                 indexes=np.where(vel>v0)
                 i=0
@@ -58,7 +57,6 @@ def fix_some_points(df,dates,v0):
                         if indexes[0][i]==len(vel)-1:
                            # print("antes de borrarcon j= "+str(j)+"  "+str(len(df[j])))
                             row=df[j].loc[df[j]["date"]==day].loc[df[j]["lat"]==points[-1][0]].index[0]
-                            print(row)
                             df[j]= df[j].drop(labels=row, axis=0)
                             i+=1
                             #takes last row
@@ -93,7 +91,7 @@ def make_day_maps(df,dates):
 #to be changed 
 folder="TrayectoriasGPS"
 df,dates=get_files_and_dates(folder)
-vmax=10
+vmax=12 #maximum velocity to fix points
 print("antes"+str(len(df[8])))
 
 fix_some_points(df,dates,vmax)
