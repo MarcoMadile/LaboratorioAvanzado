@@ -7,6 +7,7 @@ import folium.plugins
 from geopy import distance 
 import ipdb
 import itertools
+from scipy import optimize
 
 #fixing time because some files have time=8 when i want time= 0008 (so then i have it in same format)
 def fixing_time(x):
@@ -162,18 +163,23 @@ def msd(df,dates,n,tnames):
         msdF[i]=np.mean(sqdisF[:,i])
         msdM[i]=np.mean(sqdisM[:,i])
     t=np.arange(n)
-    #make plot axis in log scale, only "y" axis
-
-    ipdb.set_trace()
+    poptF,covF=optimize.curve_fit(lineal,t,msdF)
+    poptM,covM=optimize.curve_fit(lineal,t,msdM)
+    plt.plot(t,lineal(t,*poptF),label="fit hembras")
+    plt.plot(t,lineal(t,*poptM),label="fit machos")
+    #plt.plot(t,lineal(t,40,0),label="mov Browniano")
+    print("parametros de la curva para hembras:",poptF)
+    print("parametros de la curva para machos:",poptM)
     plt.plot(t,msdF,label="females")
     plt.plot(t,msdM,label="males")
-    #plt.plot(t,(msdM+msdF)/2,label="Ambas")
-    #plt.yscale("log")
     plt.legend()
-    #plt.xlim(left=10)
     plt.xlabel("time (min)")
     plt.ylabel(r"MSD (m$^2$)")	
     plt.show()
+    return 
+
+def lineal(x, a, b):
+   return a*x + b
 
 def make_maps(df,dates,n,tnames):
     for day in dates:
