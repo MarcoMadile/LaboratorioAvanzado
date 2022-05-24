@@ -2,12 +2,14 @@ from folium import Popup
 import matplotlib.pyplot as plt 
 import pandas as pd 
 import glob
-import numpy as np
+#import numpy as np
 import folium.plugins
 from geopy import distance 
-import ipdb
+#import ipdb
+import pdb
 import itertools
 from scipy import optimize
+import math, numpy as np
 
 #fixing time because some files have time=8 when i want time= 0008 (so then i have it in same format)
 def fixing_time(x):
@@ -130,21 +132,54 @@ def get_distances_each_day(df,dates,n,tnames):
 
 def make_displacements_inTime(deltatimes,longs,lats,tname,day,metodologia):
     displacements=[]
+    componentx=[]
+    componenty=[]
+    allmodules=[]
     for h in range(len(lats)-1):
         if deltatimes[h]>1:
             #ipdb.set_trace()
             auxdislat=np.linspace(lats.iloc[h],lats.iloc[h+1],deltatimes[h],endpoint=True)
             auxdislon=np.linspace(longs.iloc[h],longs.iloc[h+1],deltatimes[h],endpoint=True)
             distances=np.zeros(len(auxdislat))
+            #KARINA 
+            compx=np.zeros(len(auxdislat))
+            compy=np.zeros(len(auxdislat))
+            module=np.zeros(len(auxdislat))
             for i in range(len(auxdislat)):
                 distances[i]=distance.distance((auxdislat[i],auxdislon[i]),(lats.iloc[0],longs.iloc[0])).meters
+                #KARINA
+                compx[i],compy[i]=vectorxy(auxdislat[i],auxdislon[i],lats.iloc[0],longs.iloc[0])
+                module[i]=math.sqrt(compx[i]**2+compy[i]**2)
+                pdb.set_trace()
                 if distances[i]>500:print("distancia mayor a 500",day,tname,metodologia)
             displacements.append(distances)
+            #KARINA
+            componentx.append(compx)
+            componenty.append(compy)
+            #para chequeo allmodules debe dar igual a displacements
+            allmodules.append(module)
         else:print(tname+" no tiene mas de un minuto entre puntos",day,str(metodologia))
     #flatten the list, so that is only one list of coordinates.
     displacements=list(itertools.chain.from_iterable(displacements))
-
+    ###Devolver tambien componentx y componenty
     return displacements
+
+### Karina #######
+## x,y components (with module and sign) of the vector for origin to end 
+def vectorxy(latend,lonend,latorigin,lonorigin):
+    # Earth radius in m
+    Rearth = 6373*1000
+    #convert lat long from degrees to radians
+    latendRad=math.radians(latend)
+    lonendRad=math.radians(lonend)
+    latoriginRad=math.radians(latorigin)
+    lonoriginRad=math.radians(lonorigin)
+    dLon = lonendRad - lonoriginRad
+    y = Rearth*(math.sin(dLon) * math.cos(latendRad))
+    x = Rearth*(math.cos(latoriginRad)*math.sin(latendRad) - math.sin(latoriginRad)*math.cos(latendRad)*math.cos(dLon))
+    
+    return x,y
+#####################
 
 
 def msd(df,dates,n,tnames):
@@ -202,5 +237,5 @@ def make_maps(df,dates,n,tnames):
 folder="todaslascampanas"
 df,dates,tnames=get_files_and_dates(folder,rename4thCol=True,TakeYaguiOut=True)
 df=fix_some_points(df,dates,v0=14)
-#make_maps(df,dates,n=10,tnames=tnames)
+##make_maps(df,dates,n=10,tnames=tnames)
 msd(df,dates,360,tnames)
